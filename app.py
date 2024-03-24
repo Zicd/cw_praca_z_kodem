@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from markupsafe import escape
 app = Flask(__name__)
 
+name: str = 'Antoni'
 
 @app.route('/')
 def index():
@@ -9,6 +10,6 @@ def index():
 
 
 @app.route('/hello/')
-@app.route('/hello/<name>')
+@app.route('/hello/<string:name>')
 def hello(name=None):
     return render_template('hello.html', name=name)
