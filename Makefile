@@ -1,4 +1,6 @@
 install:
 	pip install -r requirements.txt
-run: app.py
+run:
 	python –m flask run
+test:
+	pytest app.py
